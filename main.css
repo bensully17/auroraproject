@@ -1,12 +1,57 @@
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+/*----------------------------Style Cleared---------------------------*/
 @media screen and (orientation: landscape) {
   
     html {
         height: 100vh;
     } 
     body {
+        height: 100%;
+        display: grid;
+        grid-template-rows: repeat(100, 1%);
         font-family: sans-serif;
-        /* width: 100vw; */
-        /* height: 100%; */
         margin: 0;
         padding: 0;
         background-color: #333
@@ -14,7 +59,7 @@
 
     header {
         width: 100%;
-        height: 20%;
+        grid-row: 1/20;
         display: flex;
         flex-direction: column;
         justify-content: center;
@@ -27,13 +72,15 @@
         justify-content: center;
         color:rgb(209, 209, 209);
         height: 3%;
+        padding-top: 10px;
+        font-size: 3vh; 
     }
     #newh2 {
         font-size: 1.5vw;
     }
 
     footer {
-        height: 2.5vh;
+        grid-row: 99/101;
         display: flex;
         justify-content: flex-end;
         color: rgb(209, 209, 209);
@@ -61,7 +108,7 @@
     
     }
     main {
-        height: 77%;
+        grid-row: 20/99;
         font-family: 'Julius Sans One', sans-serif;
     }
 
@@ -105,12 +152,16 @@
         height: 30%;
     }
     #charts {
-        height: 40%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+        height: 57%;
         
     }
     #charts > div{
         display: flex;
-        justify-content: center;
+        align-items: space-around;
     }
     /* @media screen and (max-width: 2900px) and (min-width: 1951px){
         #ovImg {
@@ -143,38 +194,56 @@
 
 @media screen and (orientation: portrait) {
     html {
-        height: 100%;
+        height: 100vh;
+        width: 100vw;
     }
     body {
+        display: grid;
+        grid-template-rows: repeat(100, 1%);
         font-family: sans-serif;
-        width: 100vw;
+        width: 100%;
         height: 100%;
         padding: 0;
         margin: 0;
     }
     
     header {
-        width: 100%;
-        height: 15%;
+        grid-row: 1/13;
+        width: inherit;
+        height: 100%;
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
         color: rgb(209, 209, 209);
+        font-family: 'Courgette', cursive;
     }
-    
+    header > div > h1 {
+        display: flex;
+        align-items: flex-end;
+        margin: 0;
+    }
+    #label {
+        display: flex;
+        justify-content: center;
+        color:rgb(209, 209, 209);
+        height: 3%;
+    }
     #newh2 {
         font-size: 2.5vw;
+        margin: 0;
     }
 
     footer {
-        height: 3%;
+        grid-row: 99/101;
+        height: 100%;
         display: flex;
         justify-content: flex-end;
         color: rgb(209, 209, 209);
         background-color: #333;
         align-items: center;
         padding-right: 1em;
+        font-size: 2vh;
     }
     
     #headerName {
@@ -183,7 +252,7 @@
     
     #data {
         display: flex;
-        flex-direction: row;
+        flex-direction: column;
         justify-content: space-around;
         align-items: center;
         padding-left: 1%;
@@ -191,29 +260,37 @@
     }
 
     main {
-        height: 82%;
-        background-color: #333
+        display: grid;
+        grid-template-rows: repeat(100, 1%);
+        grid-row: 13/99;
+        height: 100%;
+        background-color: #333;
+        font-family: 'Julius Sans One', sans-serif;
+        padding: 2%;
     }
+
 
     #data > div {
         display: flex;
         flex-direction: column;
-        justify-content: flex-start;
+        justify-content: center;
         align-items: center;
-        padding: .5%;
+        padding: 7px;
         border: 1px gray solid;
-        border-radius: 2px;
+        border-radius: 5px;
         box-shadow: 2px 2px 2px;
         background-color: lightgray;
         margin: .5%;
-        height: 25%;
-        width: 25%;
+        height: 17%;
+        width: 65%;
         box-shadow: 1px 1px 1px #333;
-        font-size: 1.75vw;
+        font-size: 2vh;
         font-family: 'Quicksand', sans-serif;
     
     }
-    
+    .key {
+        font-size: 2.5vh;
+    }
     .heroImage {
         background-image: url("https://static.pexels.com/photos/360912/pexels-photo-360912.jpeg");
         background-position: center;
@@ -223,23 +300,30 @@
     }
     
     .value {
-        padding-top: .2em;
-        font-size: 4vw;
+        
+        font-size: 4vh;
     }
 
     #options {
-        height: 3%;
+        grid-row: 2/5;
         display: flex;
         justify-content: center;
         padding-top: 1%;
     }
 
-    #data {
-        height: 37%;
+    #label {
+        grid-row: 5/10;
+        font-size: 2vh;
     }
-
+    #label > h1 {
+        font-size: 2vh;
+    }
+    #data {
+        grid-row: 10/70;
+    }
+    
     #charts {
-        height: 60%;
+        grid-row: 71/97;
     }
 
     #charts > div{
@@ -248,20 +332,25 @@
     }
 
     #ovImg {
-        height: 100%;
+        height: 85%;
         width: auto;
     }
     
     #ovation {
-        height: 87%
+        height: 20vh;
     }
     
     #buttons {
         height: 8%;
+        
     }
     
     #buttons > button { 
         margin: 3px;
+        font-size: 1.5vh;
+    }
+    #options > button {
+        font-size: 1.5vh;
     }
     
   }
