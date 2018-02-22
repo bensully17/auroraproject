@@ -1,8 +1,6 @@
 var baseUrl = 'http://services.swpc.noaa.gov'
 var time = ''
-// setTimeout(function(){
-//   location = ''
-// },60000)
+ 
 
 function northHemi() {
   fetch(baseUrl + '/images/animations/ovation-north/latest.jpg')
@@ -21,7 +19,7 @@ function southHemi() {
 }
 northHemi()
 
-for (let i = 0; i < 3; i++) {
+for (let i = 0; i < 4; i++) {
   let main = document.querySelector('main')
   let newSections = document.createElement('section')
   main.appendChild(newSections)
@@ -29,15 +27,20 @@ for (let i = 0; i < 3; i++) {
 
 newSections = document.querySelectorAll('main > section')
 newSections[0].setAttribute('id', 'options')
-newSections[1].setAttribute('id', 'data')
-newSections[2].setAttribute('id', 'charts')
+newSections[1].setAttribute('id', 'label')
+newSections[2].setAttribute('id', 'data')
+newSections[3].setAttribute('id', 'charts')
 
 let mainOptions = document.querySelector('#options')
-for (i= 0; i < 4; i++) {
+for (i= 0; i < 2; i++) {
   let newOptionButton = document.createElement('button')
   mainOptions.appendChild(newOptionButton)  
 }
-
+let label = document.querySelector('#label')
+let newLabelH1 = document.createElement('h1')
+label.appendChild(newLabelH1)
+let labelH1 = document.querySelector('#label > h1')
+labelH1.textContent = 'Arriving at Earth Now:'
 
 for (let i = 0; i < 4; i++) {
   let mainData = document.querySelector('#data')
@@ -74,6 +77,7 @@ buttons[1].textContent = 'Southern Hemisphere'
 buttons[0].addEventListener('click', northHemi)
 buttons[1].addEventListener('click', southHemi)
 
+let optionButton = document.querySelectorAll('#options > button')
 newDivs = document.querySelectorAll('#data > div')
 newDivs[0].setAttribute('id', 'speed')
 newDivs[1].setAttribute('id', 'density')
@@ -133,73 +137,32 @@ fetch(baseUrl + '/products/solar-wind/plasma-1-day.json')
     var time = array [0]
     let trialTime = Date.parse(time);
     let timePassedSat
-    let timeNow = Date.now()
+    let timeNow = moment.utc(Date.now())
     let answer = []
     let smallestTime = 100000000000000
-    console.log(timeNow);
     
-    for (const index in result){
-      // console.log(Date.parse(result[index][0]));
-      
-      let arrivalTime = Date.parse(result[index][0]) + (1500000/(result[index][2]))*1000
-      let differenceTime = Math.abs(arrivalTime - timeNow)
+    for (const index in result){      
+      let arrivalTime = moment.utc(result[index][0]).add(((1500000/(result[index][2]))*1000), 'milliseconds')
+      let differenceTime = Math.abs(moment.utc(arrivalTime) - timeNow)
       if (differenceTime < smallestTime) {
         smallestTime = differenceTime
         answer = result[index]
-        console.log("ARRIVAL TIME: " + arrivalTime);
-        console.log("TIME NOW: " + timeNow);
       }
       
     }
-    console.log(smallestTime);
-    
-    console.log("FINAL ARRAY")
-    console.log(answer)
-    
-    
-    
-    
 
-    // function closest(){
-    //   result.forEach(x => {
-    //     let timePassedSat = Date.parse(x[0])
-    //     let timeSinceSat = 1500000/(x[2])*1000        
-    //     let currentTime = Date.now()       
-    //     if ((currentTime - trialTime) < (timePassedSat + timeSinceSat)) {
-    //       trialTime = timePassedSat
-    //     }          
-    //   })
-    // };
-    // let newArray = []
-    // function closest(){
-    //   result.forEach(x => {
-    //     let time2 = Date.parse(x[0])
-    //     let speed = (x[2])/1000
-    //     let timeToEarth = 1500000/speed
-    //     let arrivalTime = time2 + timeToEarth
-    //     newArray.push(arrivalTime)
-    //   });
-    //   console.log(moment(newArray[newArray.length-1]))
-    //   console.log(moment(timeNow))
-    // }
-    // closest()
-    // console.log(newArray);
-    
-    // console.log(moment.utc(trialTime))
-    // console.log(moment.utc(Date.now()))
-    // console.log(now)
+    indexArrival = result.indexOf(answer)    
     var speed = array[2]
+    let speedArrivingNow = answer[2]
     var density = array[1]
+    let densityArrivingNow = answer[1]
     newh2.textContent = 'Last Updated: ' + time + ' UTC'
-    speedValue.textContent = speed 
-    densityValue.textContent = density
-    // console.log(result)
+    speedValue.textContent = speedArrivingNow 
+    densityValue.textContent = densityArrivingNow
     spd = ((Math.pow(parseFloat(speed), 2)/100) + (Math.pow(parseFloat(density), 2)*100))
-    // console.log(spd)
-    let optionButton = document.querySelectorAll('#options > button')
-    optionButton[0].textContent = parseInt(1500000/speed/60) + ' minutes from now'
-  })
-
+    spdArrivingNow = ((Math.pow(parseFloat(speedArrivingNow), 2)/100) + (Math.pow(parseFloat(densityArrivingNow), 2)*100))
+    
+  
 fetch(baseUrl + '/products/solar-wind/mag-1-day.json')
   .then(function(response) {
     return response.json()
@@ -208,20 +171,38 @@ fetch(baseUrl + '/products/solar-wind/mag-1-day.json')
     var array1 = result[result.length - 1]
     var time = array1[0]
     bz = array1[3]
-    // console.log(result)
-    bzValue.textContent = bz 
-    bz = (parseFloat(bz))*2000
-    // console.log(bz)
+    bzArrivingNow = result[indexArrival][3]
+    bzValue.textContent = bzArrivingNow 
+    bz = (parseFloat(bz))*5000
     var intensity = (spd - bz)/1000
     intensity = intensity.toFixed(3)
     if (intensity < 0) {
       intensity = 0
     }
-    // console.log(intensity);
-    
-    intensityValue.textContent = intensity
-  })
+    let intensityArrivingNow = (spdArrivingNow - bzArrivingNow)/1000
+    intensityArrivingNow = intensityArrivingNow.toFixed(3)    
+    intensityValue.textContent = intensityArrivingNow
+    optionButton[0].textContent = 'Arriving at Earth in ' + parseInt(1500000/speed/60) + ' minutes'
+    optionButton[1].textContent = 'Arriving at Earth Now'
+    optionButton[1].addEventListener('click', dataArrivingNow)
+    optionButton[0].addEventListener('click', dataPassingSat)
+    function dataArrivingNow () {
+      speedValue.textContent = speedArrivingNow
+      densityValue.textContent = densityArrivingNow
+      bzValue.textContent = bzArrivingNow
+      intensityValue.textContent = intensityArrivingNow
+      labelH1.textContent = optionButton[1].textContent + ':'
+    }
+    function dataPassingSat () {
+      speedValue.textContent = speed
+      densityValue.textContent = density
+      bzValue.textContent = array1[3]
+      intensityValue.textContent = intensity
+      labelH1.textContent = optionButton[0].textContent + ':'
 
+    }
+  })
+})
 
 var header = document.querySelector('header')
 var newh2 = document.createElement('h2')
