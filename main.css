@@ -203,6 +203,7 @@ table {
         font-family: sans-serif;
         width: 100%;
         height: 100%;
+        background-color: #333;
         padding: 0;
         margin: 0;
     }
@@ -227,7 +228,7 @@ table {
         display: flex;
         justify-content: center;
         color:rgb(209, 209, 209);
-        height: 3%;
+        align-items: center;
     }
     #newh2 {
         font-size: 2.5vw;
@@ -262,11 +263,11 @@ table {
     main {
         display: grid;
         grid-template-rows: repeat(100, 1%);
-        grid-row: 13/99;
+        grid-row: 13/95;
         height: 100%;
         background-color: #333;
         font-family: 'Julius Sans One', sans-serif;
-        padding: 2%;
+        padding-top: 1%;
     }
 
 
@@ -314,9 +315,11 @@ table {
     #label {
         grid-row: 5/10;
         font-size: 2vh;
+        padding: 1%
     }
     #label > h1 {
         font-size: 2vh;
+        margin: 1%;    
     }
     #data {
         grid-row: 10/70;
