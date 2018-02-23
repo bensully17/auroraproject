@@ -124,7 +124,7 @@ speedUnits.textContent = 'km/s'
 densityUnits.textContent = 'p/cm'+'\u00B3' 
 bzUnits.textContent = 'nT'
 intensityUnits.textContent = '1';
-intensityUnits.style.color = 'lightgray'
+intensityUnits.style.color = 'rgb(209, 209, 209, 0)'
 
 
 
