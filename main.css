@@ -173,12 +173,7 @@ table {
         height: 35vh;
         width: auto;
     }
-    @media (max-width: 1950){
-        #ovImg {
-            height: 10vh;
-            width: auto;
-        }
-    }
+   
     #ovation {
         height: 70%
     }
