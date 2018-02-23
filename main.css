@@ -54,7 +54,7 @@ table {
         font-family: sans-serif;
         margin: 0;
         padding: 0;
-        background-color: #222
+        background-color: #222;
     }
 
     header {
@@ -204,12 +204,15 @@ table {
         height: 2.5vh;
         width: 13%;
     }
+}
 
 @media screen and (orientation: portrait) {
+
     html {
         height: 100vh;
         width: 100vw;
     }
+
     body {
         display: grid;
         grid-template-rows: repeat(100, 1%);
@@ -232,17 +235,20 @@ table {
         color: rgba(227, 227, 227, 0.865);
         font-family: 'Courgette', cursive;
     }
+
     header > div > h1 {
         display: flex;
         align-items: flex-end;
         margin: 0;
     }
+
     #label {
         display: flex;
         justify-content: center;
         color:rgb(209, 209, 209);
         align-items: center;
     }
+
     #newh2 {
         font-size: 2.5vw;
         margin: 0;
@@ -293,15 +299,15 @@ table {
         border: 1px gray solid;
         border-radius: 5px;
         box-shadow: 2px 2px 2px;
-        background-color: (180, 179, 179, 0.865);
+        background-color: rgba(180, 179, 179, 0.865);
         margin: .5%;
         height: 17%;
         width: 65%;
         box-shadow: 1px 1px 1px #333;
         font-size: 2vh;
         font-family: 'Quicksand', sans-serif;
-    
     }
+
     .key {
         font-size: 2.5vh;
     }
@@ -314,7 +320,6 @@ table {
     }
     
     .value {
-        
         font-size: 4vh;
     }
 
@@ -330,10 +335,12 @@ table {
         font-size: 2vh;
         padding: 1%
     }
+
     #label > h1 {
         font-size: 2vh;
         margin: 1%;    
     }
+
     #data {
         grid-row: 10/70;
     }
@@ -342,7 +349,7 @@ table {
         grid-row: 71/97;
     }
 
-    #charts > div{
+    #charts > div {
         display: flex;
         justify-content: center;
     }
@@ -358,7 +365,6 @@ table {
     
     #buttons {
         height: 8%;
-        
     }
     
     #buttons > button { 
@@ -368,7 +374,9 @@ table {
         border: solid #00695c 1px;
         box-shadow: 1px 1px 1px;
         font-family: 'Quicksand', sans-serif;
+        height: 2.5vh;
     }
+
     #options > button {
         margin: 3px;
         background-color: #00bfa5;
@@ -376,5 +384,6 @@ table {
         border: solid #00695c 1px;
         box-shadow: 1px 1px 1px;
         font-family: 'Quicksand', sans-serif;
+        height: 2.5vh;
     }
-}} 
+} 
