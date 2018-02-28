@@ -365,6 +365,7 @@ table {
     
     #buttons {
         height: 8%;
+        display: '';
     }
     
     #buttons > button { 
