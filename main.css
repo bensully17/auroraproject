@@ -54,7 +54,7 @@ table {
         font-family: sans-serif;
         margin: 0;
         padding: 0;
-        background-color: #222;
+        background-color: rgba(21, 32, 34, 0.902);
     }
 
     header {
@@ -65,7 +65,8 @@ table {
         justify-content: center;
         align-items: center;
         color: rgba(227, 227, 227, 0.865);
-        font-family: 'Courgette', cursive;
+        box-shadow: 0 1px 2px 2px rgba(0, 0, 0, 0.459);
+        font-family: 'Courgette', cursive ; 
     }
     #label {
         display: flex;
@@ -84,7 +85,6 @@ table {
         display: flex;
         justify-content: flex-end;
         color: rgb(209, 209, 209);
-        /* background-color: #333; */
         align-items: center;
         padding-right: 1em;
         position: fixed;
@@ -99,7 +99,6 @@ table {
 
     #data {
         display: flex;
-        /* padding-top: 4em; */
         flex-direction: row;
         justify-content: space-around;
         align-items: center;
@@ -124,7 +123,7 @@ table {
         margin: 1em;
         height: 70%;
         width: 20%;
-        box-shadow: 3px 3px 3px black;
+        box-shadow: 0 1px 3px 3px rgba(0, 0, 0, 0.466);
         font-size: 1.25vw;
         font-family: 'Quicksand', sans-serif;
     }
@@ -142,7 +141,7 @@ table {
         font-size: 3vw;
     }
     #options {
-        height: 4%;
+        height: 8%;
         display: flex;
         justify-content: center;
         padding-top: 1%;
@@ -163,12 +162,7 @@ table {
         display: flex;
         align-items: space-around;
     }
-    /* @media screen and (max-width: 2900px) and (min-width: 1951px){
-        #ovImg {
-            height: 375px;
-            width: auto;
-        }
-    } */
+  
     #ovImg {
         height: 35vh;
         width: auto;
@@ -182,27 +176,31 @@ table {
         height: 8%;
     }
 
-    #buttons > button { 
-        margin: 3px;
-        color: rgb(209, 209, 209);
-        background-color: #00695c;
-        border-radius: 4.5px;
-        border: solid #00695c 1px;
-        box-shadow: black 2px 2px 2px;
-        font-family: 'Quicksand', sans-serif;
-        height: 2.5vh;
-    }
-    #options > button {
-        margin: 3px;
-        background-color: #00695c;
+
+     button {
+        margin: 7px;
+        background-color: rgb(0, 59, 76);
         color: rgb(209, 209, 209);
         border-color: black;
         border-radius: 4.5px;
-        border: solid #00695c 1px;
-        box-shadow: black 2px 2px 2px;
+        border: solid rgb(0, 59, 76) 1px;
+        box-shadow: rgba(0, 0, 0, 0.491) 0 1px 3px 3px;
         font-family: 'Quicksand', sans-serif;
-        height: 2.5vh;
-        width: 13%;
+        font-weight: bolder;
+        font-size: 80%;
+        height: 4.5vh;
+        width: 15vw;
+    }
+    #buttons > button {
+        width: 10vw;
+    }
+    button:hover {
+        background-color:  rgba(0, 118, 151, 0.808);
+        cursor: pointer;
+    }
+
+    button:active {
+        background-color: rgb(0, 59, 76); !important
     }
 }
 
@@ -324,14 +322,14 @@ table {
     }
 
     #options {
-        grid-row: 2/5;
+        grid-row: 2/7;
         display: flex;
         justify-content: center;
         padding-top: 1%;
     }
 
     #label {
-        grid-row: 5/10;
+        grid-row: 7/10;
         font-size: 2vh;
         padding: 1%
     }
@@ -368,23 +366,20 @@ table {
         display: '';
     }
     
-    #buttons > button { 
+    button { 
         margin: 3px;
-        background-color: #00bfa5;
+        background-color: rgb(0, 59, 76);
+        color: rgb(209, 209, 209);
         border-radius: 4px;
-        border: solid #00695c 1px;
-        box-shadow: 1px 1px 1px;
+        box-shadow: 0 1px 1px 1px rgba(0, 0, 0, 0.5);
         font-family: 'Quicksand', sans-serif;
         height: 2.5vh;
+        border: rgb(0, 59, 76);
     }
 
-    #options > button {
-        margin: 3px;
-        background-color: #00bfa5;
-        border-radius: 4px;
-        border: solid #00695c 1px;
-        box-shadow: 1px 1px 1px;
-        font-family: 'Quicksand', sans-serif;
-        height: 2.5vh;
+    button:hover {
+        cursor: pointer;
+        background-color:  rgba(0, 118, 151, 0.808);
     }
+
 } 

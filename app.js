@@ -159,7 +159,7 @@ fetch(baseUrl + '/products/solar-wind/plasma-1-day.json')
     newh2.textContent = 'Last Updated: ' + time + ' UTC'
     speedValue.textContent = speedArrivingNow 
     densityValue.textContent = densityArrivingNow
-    spd = ((Math.pow(parseFloat(speed), 2)/100) + (Math.pow(parseFloat(density), 2)*100))
+    spd = ((Math.pow(parseFloat(speed), 2)/100) + (Math.pow(parseFloat(density), 2)*100))    
     spdArrivingNow = ((Math.pow(parseFloat(speedArrivingNow), 2)/100) + (Math.pow(parseFloat(densityArrivingNow), 2)*100))
     
   
@@ -173,13 +173,14 @@ fetch(baseUrl + '/products/solar-wind/mag-1-day.json')
     bz = array1[3]
     bzArrivingNow = result[indexArrival][3]
     bzValue.textContent = bzArrivingNow 
-    bz = (parseFloat(bz))*5000
+    bz = Math.pow((parseFloat(bz)), 3)*100
+    let bzNowCalc = Math.pow((parseFloat(bzArrivingNow)), 3)*50
     var intensity = (spd - bz)/1000
     intensity = intensity.toFixed(3)
     if (intensity < 0) {
       intensity = 0
     }
-    let intensityArrivingNow = (spdArrivingNow - bzArrivingNow)/1000
+    let intensityArrivingNow = (spdArrivingNow - bzNowCalc)/1000
     intensityArrivingNow = intensityArrivingNow.toFixed(3)    
     intensityValue.textContent = intensityArrivingNow
     optionButton[0].textContent = 'Arriving at Earth in ' + parseInt(1500000/speed/60) + ' minutes'
