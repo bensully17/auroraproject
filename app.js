@@ -142,9 +142,9 @@ fetch(baseUrl + '/products/solar-wind/plasma-1-day.json')
   .then(function(result){
     array = result[result.length - 1]
     var time = array [0]
-    let trialTime = Date.parse(time);
+    let trialTime = moment.utc(time);
     let timePassedSat
-    let timeNow = moment.utc(Date.now())
+    let timeNow = moment()
     let answer = []
     let smallestTime = 100000000000000
     
