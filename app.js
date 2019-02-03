@@ -19,17 +19,24 @@ function southHemi() {
 }
 northHemi()
 
-for (let i = 0; i < 4; i++) {
+for (let i = 0; i < 5; i++) {
   let main = document.querySelector('main')
   let newSections = document.createElement('section')
   main.appendChild(newSections)
 }
 
 newSections = document.querySelectorAll('main > section')
-newSections[0].setAttribute('id', 'options')
-newSections[1].setAttribute('id', 'label')
-newSections[2].setAttribute('id', 'data')
-newSections[3].setAttribute('id', 'charts')
+newSections[0].setAttribute('id', 'webcam')
+newSections[1].setAttribute('id', 'options')
+newSections[2].setAttribute('id', 'label')
+newSections[3].setAttribute('id', 'data')
+newSections[4].setAttribute('id', 'charts')
+
+let mnwebcam = document.querySelector('#webcam')
+let webcamView = document.createElement('img')
+webcamView.setAttribute('id', 'webcamView')
+mnwebcam.appendChild(webcamView)
+webcamView.setAttribute('src', 'http://northwoodsauroracam.com/images/image.jpg')
 
 let mainOptions = document.querySelector('#options')
 for (i= 0; i < 2; i++) {
@@ -156,7 +163,6 @@ fetch(baseUrl + '/products/solar-wind/plasma-1-day.json')
     let speedArrivingNow = answer[2]
     var density = array[1]
     let densityArrivingNow = answer[1]
-    newh2.textContent = 'Last Updated: ' + time + ' UTC'
     speedValue.textContent = speedArrivingNow 
     densityValue.textContent = densityArrivingNow
     spd = ((Math.pow(parseFloat(speed), 2)/100) + (Math.pow(parseFloat(density), 2)*100))    
@@ -206,11 +212,8 @@ fetch(baseUrl + '/products/solar-wind/mag-1-day.json')
 })
 
 var header = document.querySelector('header')
-var newh2 = document.createElement('h2')
 var spd = 0
 var bz = 0
-header.appendChild(newh2)
-newh2.setAttribute('id', 'newh2')
 
 var intensity = document.createElement('div')
 const speedValue = document.querySelector('#speed > .value')
