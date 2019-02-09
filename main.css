@@ -67,7 +67,7 @@ table {
 @media screen and (orientation: landscape) {
   
     html {
-        height: 200%;
+        height: 100%;
         width: 100vw;
     } 
     body {
@@ -100,17 +100,17 @@ table {
     }
 
     .heroText > h2 {
-        font-size: 1.25em;
+        font-size: 1.5vw;
     }
 
-    #label {
-        display: flex;
-        justify-content: center;
-        color:rgb(209, 209, 209);
-        grid-row: 62/65;
+    /* #label { */
+        /* display: flex; */
+        /* justify-content: center; */
+        /* color:rgb(209, 209, 209); */
+        /* grid-row: 62/65; */
         /* height: 3%; */
-        font-size: 3vh; 
-    }
+        /* font-size: 3vh;  */
+    /* } */
 
     footer {
         width: 95vw;
@@ -133,7 +133,7 @@ table {
         font-size: 3vw;
     }
 
-    #data {
+    /* #data {
         grid-row: 66/80;
         display: flex;
         flex-direction: row;
@@ -142,7 +142,7 @@ table {
         padding-left: 10%;
         padding-right: 10%;
     
-    }
+    } */
     main {
         width: 100vw;
         display: grid;
@@ -151,7 +151,7 @@ table {
         font-family: 'Julius Sans One', sans-serif;
     }
 
-    #data > div {
+    /* #data > div {
         display: flex;
         flex-direction: column;
         justify-content: flex-start;
@@ -166,7 +166,7 @@ table {
         box-shadow: 0 1px 3px 3px rgba(0, 0, 0, 0.466);
         font-size: 1.25vw;
         font-family: 'Quicksand', sans-serif;
-    }
+    } */
 
     .heroImage {
         background-image: url("https://s3-us-west-1.amazonaws.com/bensgalvanizeprojects.com/auroraforecast/auroraPhoto.jpg");
@@ -176,23 +176,21 @@ table {
         position: relative;
     }
 
-    .value {
+    /* .value {
         padding-top: .2em;
         font-size: 3vw;
-    }
-    #options {
-        /* height: 8%; */
+    } */
+    /* #options {
         display: flex;
         justify-content: center;
         grid-row: 52/60;
         width: 100vw;
-    }
+    } */
 
     #webcam {
         display: flex;
         justify-content: center;
-        grid-row: 2/50;
-        /* height: 50%; */
+        grid-row: 2/90;
         width: 100vw;
 
     }
@@ -209,7 +207,7 @@ table {
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        grid-row: 82/101;
+        grid-row: 62/101;
         width: 100vw;  
     }
 
@@ -261,7 +259,7 @@ table {
 @media screen and (orientation: portrait) {
   
     html {
-        height: 200%;
+        height: 100%;
         width: 100vw;
     } 
     body {
@@ -294,17 +292,16 @@ table {
     }
 
     .heroText > h2 {
-        font-size: 1.25em;
+        font-size: 4vw;
     }
 
-    #label {
+    /* #label {
         display: flex;
         justify-content: center;
         color:rgb(209, 209, 209);
         grid-row: 53/58;
-        /* height: 3%; */
         font-size: 3vh; 
-    }
+    } */
 
     footer {
         width: 95vw;
@@ -324,19 +321,18 @@ table {
     
 
     #headerName {
-        font-size: 3vw;
+        font-size: 7vw;
     }
 
-    #data {
+    /* #data {
         width: 100vw;
         grid-row: 60/75;
         display: flex;
         flex-direction: column;
         justify-content: space-around;
         align-items: center;
-       
-    
-    }
+    } */
+
     main {
         width: 100vw;
         display: grid;
@@ -345,7 +341,7 @@ table {
         font-family: 'Julius Sans One', sans-serif;
     }
 
-    #data > div {
+    /* #data > div {
         display: flex;
         flex-direction: column;
         justify-content: flex-start;
@@ -360,7 +356,7 @@ table {
         box-shadow: 0 1px 3px 3px rgba(0, 0, 0, 0.466);
         font-size: 1.25vw;
         font-family: 'Quicksand', sans-serif;
-    }
+    } */
 
     .heroImage {
         background-image: url("https://s3-us-west-1.amazonaws.com/bensgalvanizeprojects.com/auroraforecast/auroraPhoto.jpg");
@@ -370,29 +366,30 @@ table {
         position: relative;
     }
 
-    .value {
+    /* .value {
         padding-top: .2em;
         font-size: 3vw;
-    }
-    #options {
+    } */
+
+    /* #options {
         display: flex;
         flex-direction: row;
         align-items: center;
         justify-content: center;
         grid-row: 32/50;
         width: 100vw;
-    }
+    } */
 
     #webcam {
         display: flex;
         justify-content: center;
-        grid-row: 2/30;
+        grid-row: 2/90;
         width: 100vw;
     }
 
     #webcamView {
-        height: 70vw;
-        width: 97vw;
+        height: 60vw;
+        width: 98vw;
         display: flex;
         justify-content: center;
         box-shadow: 0 1px 2px 2px rgba(0, 0, 0, 0.459);
@@ -404,7 +401,7 @@ table {
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        grid-row: 78/101;
+        grid-row: 35/101;
         width: 100vw;  
     }
 
