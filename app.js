@@ -34,8 +34,12 @@ newSections[0].setAttribute('id', 'webcam')
 
 let mnwebcam = document.querySelector('#webcam')
 let webcamView = document.createElement('img')
+let statusMessage = document.createElement('div')
+statusMessage.setAttribute('id', 'webcamStatus')
+statusMessage.innerHTML = 'I apologize for the downtime. The heating system is not funtioning properly. I anticipate having this fully fixed by the end of the month. Thank you!'
 webcamView.setAttribute('id', 'webcamView')
 mnwebcam.appendChild(webcamView)
+mnwebcam.appendChild(statusMessage)
 webcamView.setAttribute('src', 'http://northwoodsauroracam.com/images/image.jpg')
 
 // let mainOptions = document.querySelector('#options')
