@@ -188,11 +188,12 @@ table {
     } */
 
     #webcam {
-        display: flex;
-        flex-direction: column;
-        justify-content: space-around;
-        align-items: center;
+        display: grid;
+        /* flex-direction: column; */
+        /* justify-content: space-around; */
+        /* align-items: center; */
         grid-row: 1/100;
+        margin: auto;
         width: inherit;
     }
 
@@ -202,13 +203,14 @@ table {
         height: auto;
         width: 55%;
         box-shadow: 0 1px 2px 2px rgba(0, 0, 0, 0.459);
-
+        margin: auto;
     }
 
     #webcamStatus {
         grid-row: 98/99;
         grid-column: 1/99;
         color: white;
+        margin: auto;
     }
 
     #charts {
