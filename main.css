@@ -201,7 +201,7 @@ table {
         grid-row: 1/95;
         grid-column: 40/60;
         height: auto;
-        width: 55%;
+        width: 58%;
         box-shadow: 0 1px 2px 2px rgba(0, 0, 0, 0.459);
         margin: auto;
     }
@@ -211,6 +211,7 @@ table {
         grid-column: 1/99;
         color: white;
         margin: auto;
+        padding: 1em;
     }
 
     #charts {
@@ -392,10 +393,10 @@ table {
     } */
 
     #webcam {
-        display: flex;
-        flex-direction: column;
+        display: grid;
+        /* flex-direction: column;
         justify-content: space-around;
-        align-items: center;
+        align-items: center; */
         grid-row: 1/100;
         width: inherit;
     }
@@ -404,7 +405,8 @@ table {
         grid-row: 1/95;
         grid-column: 40/60;
         height: auto;
-        width: 100%;
+        width: 100vw;
+        margin: auto;
         box-shadow: 0 1px 2px 2px rgba(0, 0, 0, 0.459);
 
     }
@@ -413,6 +415,8 @@ table {
         grid-row: 98/99;
         grid-column: 1/99;
         color: white;
+        margin: auto;
+        padding: 1em;
     }
 
     #charts {
